@@ -4,7 +4,6 @@ class Person
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
-
     public string AGE { get; set; }
 }
 
@@ -43,7 +42,6 @@ class People
             else if (choice == "4")
             {
                 DeletePerson(people);
-
             }
             else if (choice == "5")
             {
