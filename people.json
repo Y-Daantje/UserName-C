@@ -1,18 +1,22 @@
 [
   {
     "FirstName": "yannick",
-    "LastName": "daantje"
+    "LastName": "daantje",
+    "AGE": "24"
   },
   {
     "FirstName": "Ronald",
-    "LastName": "de Zwart"
+    "LastName": "de Zwart",
+    "AGE": null
   },
   {
     "FirstName": "Jesse",
-    "LastName": "de Zeeuw"
+    "LastName": "de Zeeuw",
+    "AGE": null
   },
   {
     "FirstName": "Tippe",
-    "LastName": "van Roosmalen"
+    "LastName": "van Roosmalen",
+    "AGE": null
   }
 ]

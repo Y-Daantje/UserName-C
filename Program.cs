@@ -4,6 +4,8 @@ class Person
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
+
+    public string AGE { get; set; }
 }
 
 class People
@@ -40,11 +42,12 @@ class People
             }
             else if (choice == "4")
             {
-                SearchPerson(people);
+                DeletePerson(people);
+
             }
             else if (choice == "5")
             {
-                DeletePerson(people);
+                SearchPerson(people);
             }
             else if (choice == "6")
             {
@@ -98,16 +101,20 @@ class People
         Console.Write("Enter last name: ");
         string? lastName = Console.ReadLine();
 
-        if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName))
+        Console.Write("Enter Age: ");
+        string? age = Console.ReadLine();
+
+        if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName) || string.IsNullOrWhiteSpace(age))
         {
-            Console.WriteLine("First and last name cannot be empty.");
+            Console.WriteLine("First and last name , age cannot be empty.");
             return;
         }
 
         Person p = new Person
         {
             FirstName = firstName,
-            LastName = lastName
+            LastName = lastName,
+            AGE = age
         };
 
         // Add to list and save
@@ -148,6 +155,13 @@ class People
         if (!string.IsNullOrWhiteSpace(newLastName))
         {
             personToUpdate.LastName = newLastName;
+        }
+
+        Console.Write($"Enter new age (current: {personToUpdate.AGE}): ");
+        string? newAge = Console.ReadLine();
+        if (!string.IsNullOrWhiteSpace(newAge))
+        {
+            personToUpdate.AGE = newAge;
         }
 
         SavePeopleToJson(people); // Save after updating
@@ -196,7 +210,7 @@ class People
         Console.WriteLine("Search results:");
         foreach (var person in results)
         {
-            Console.WriteLine($"{person.FirstName} {person.LastName}");
+            Console.WriteLine($"{person.FirstName} {person.LastName} Age: {person.AGE}");
         }
     }
 
